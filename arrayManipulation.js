@@ -1,33 +1,65 @@
-function processArray(numbers) {
-    return numbers.map((num) => {
+function processArray(array) {
+    let result = [];
+    for (let num of array) {
         if (num % 2 === 0) {
-            return num * num;
+            result.push(num * num);
         } else {
-            return num * 3;
+            result.push(num * 3);
         }
-    });
+    }
+    return result;
 }
 
-const inputNumbers = [5, 10, 15, 20];
-const processedNumbers = processArray(inputNumbers);
-console.log(processedNumbers); 
+function main() {
+    let inputArray = [];
+    let input = parseInt(prompt("Enter integers separated by spaces, and type -1 to stop:"));
 
+    while (input!== -1) {
+        inputArray.push(input);
+        input = parseInt(prompt("Enter integers separated by spaces, and type -1 to stop:"));
+    }
 
+    let processedArray = processArray(inputArray);
 
-
-function formatArrayStrings(strings, processedNumbers) {
-    return strings.map((str, index) => {
-        if (processedNumbers[index] % 2 === 0) {
-            return str.toUpperCase();
-        } else {
-            return str.toLowerCase();
-        }
-    });
+    for (let value of processedArray) {
+        console.log(value + " ");
+    }
 }
 
-const inputStrings = ['Boston', 'London', 'Accra', 'Cairo'];
-const formattedStrings = formatArrayStrings(inputStrings, processedNumbers);
-console.log(formattedStrings); 
+main();
+
+
+
+
+function processArray(array) {
+    let result = [];
+    for (let num of array) {
+        if (num % 2 === 0) {
+            result.push(num * num);
+        } else {
+            result.push(num * 3);
+        }
+    }
+    return result;
+}
+
+function main() {
+    let inputArray = [];
+    let input = parseInt(prompt("Enter integers separated by spaces, and type -1 to stop:"));
+
+    while (input!== -1) {
+        inputArray.push(input);
+        input = parseInt(prompt("Enter integers separated by spaces, and type -1 to stop:"));
+    }
+
+    let processedArray = processArray(inputArray);
+
+    for (let value of processedArray) {
+        console.log(value + " ");
+    }
+}
+
+main(); 
 
 
 
